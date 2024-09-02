@@ -383,15 +383,6 @@ body {
     padding: 2px 5px;
     border-radius: 3px;
 }
-.imageContainer {
-    border: 2px solid black;
-    transition: border-color 0.3s;
-}
-
-.imageContainer:hover {
-    border-color: green;
-}
-
 .buttonsTitle {
   text-align: center;
   font-size: 18px;
@@ -445,3 +436,53 @@ body {
     padding-right: 100px;
   }
 }
+
+.btn-toggle {
+  display: flex;
+  border: 1px solid #383535;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  width: 5rem; /* Buton grubunun genişliği */
+  height: 2.5rem;
+  align-items: stretch; /* Butonların dikey hizalamasını sağlar */
+}
+.btn-toggle .btn {
+  flex: 1;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+.btn-toggle .btn:first-child {
+  border-right: 1px solid #363636;
+}
+.btn-toggle .btn.selected-left {
+  background-color: red;
+  color: #2b2727;
+  transform: scale(1.05);
+}
+.btn-toggle .btn.selected-right {
+  background-color: green;
+  color: #2b2727;
+  transform: scale(1.05);
+}
+.btn-toggle .btn:not(.selected-left):not(.selected-right) {
+  background-color: #363636;
+  color: #363636;
+}
+.btn-toggle .btn-left {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+.btn-toggle .btn-right {
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+.btn-toggle .btn-left::before,
+.btn-toggle .btn-right::before {
+  content: "";
+  font-size: 1.5rem; /* Emoji boyutu */
+}
+

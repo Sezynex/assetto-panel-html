@@ -77,6 +77,38 @@
 		<script src="assets/js/buttons.js"></script>
 		<!--<script src="assets/js/lists.js"></script>-->
 
+		<!--Benim butonlar-->
+		<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Buton</title>
+			<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+			<link rel="stylesheet" href="styles.css">
+		</head>
+		<body>
+		
+		<div class="btn-toggle">
+			<button type="button" class="btn btn-left" onclick="toggleSelection('left')">⛔</button>
+			<button type="button" class="btn btn-right" onclick="toggleSelection('right')">✅</button>
+		</div>
+		
+		<script>
+			function toggleSelection(selected) {
+				const leftButton = document.querySelector('.btn-left');
+				const rightButton = document.querySelector('.btn-right');
+		
+				if (selected === 'left') {
+					leftButton.classList.add('selected-left');
+					rightButton.classList.remove('selected-right');
+				} else {
+					rightButton.classList.add('selected-right');
+					leftButton.classList.remove('selected-left');
+				}
+			}
+		</script>
+
+
 		<!-- Icons -->
 		<script>
 			lucide.createIcons();
