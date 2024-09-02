@@ -368,12 +368,15 @@ body {
   color: #333; /* Yazı rengini ayarlayabilirsin */
 }
 
-.traffic-map-label {
-  position: absolute; /* veya relative, fixed, vs. ihtiyaca göre */
-  top: 20px; /* dikey konum */
-  left: 30px; /* yatay konum */
+#trafikli-haritalar {
+  position: absolute; /* veya relative, fixed, vb. */
+  top: 370px; /* istediğiniz konum */
+  left: 90px; /* istediğiniz konum */
+  color: var(--fg); /* Yazı rengini ayarlayabilirsin */
+  font-size: 30px; /* veya istediğiniz boyut */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
 }
-
 
 
 /* M E D I A - Q U E R I E S */
