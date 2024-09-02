@@ -259,26 +259,57 @@ body {
 .button__1 {
   grid-row: 1;
   grid-column: 1;
+  background-image: url("./assets/tatsumi.png") !important;
+  background-color: #070709;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
+
 .button__2 {
   grid-row: 1;
   grid-column: 2;
+  background-image: url("./assets/lac.bmp") !important;
+  background-color: #070709;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 .button__3 {
-  grid-row: 2;
-  grid-column: 1;
+  grid-row: 1;
+  grid-column: 3;
+  background-image: url("./assets/newgen.bmp") !important;
+  background-color: #070709;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 .button__4 {
   grid-row: 2;
-  grid-column: 2;
+  grid-column: 1;
+  background-image: url("./assets/nfs.bmp") !important;
+  background-color: #070709;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 .button__5 {
-  grid-row: 1;
-  grid-column: 3;
+  grid-row: 2;
+  grid-column: 2;
+  background-image: url("./assets/fdr.jpg") !important;
+  background-color: #070709;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 .button__6 {
   grid-row: 2;
   grid-column: 3;
+  background-image: url("./assets/tatsumi.png") !important;
+  background-color: #070709;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 .button:hover {
   background-color: var(--accent);

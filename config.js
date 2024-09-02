@@ -18,9 +18,9 @@ const CONFIG = {
 
 	// Greetings
 	greetingMorning: 'Günaydın!',
-	greetingAfternoon: 'İyi günler.',
+	greetingAfternoon: 'İyi günler',
 	greetingEvening: 'İyi akşamlar',
-	greetingNight: 'Yat artık!',
+	greetingNight: 'İyi geceler',
 
 	// Layout
 	bentoLayout: 'bento', // 'bento', 'lists', 'buttons'

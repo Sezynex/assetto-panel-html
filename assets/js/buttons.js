@@ -11,8 +11,6 @@ const generateFirstButtonsContainer = () => {
 		  target="${CONFIG.openInNewTab ? '_blank' : ''}"
 		  class="card button button__${button.id}"
 		>
-		  <img src="assets/lac.bmp" alt="button image" class="buttonImage"/>
-		</a>
 	`;	
 
 		const position = 'beforeend';
