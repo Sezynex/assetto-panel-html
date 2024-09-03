@@ -240,7 +240,7 @@ body {
   padding: 20px;
   position: relative;
   top: -100px;
-  left: -200px;
+  margin-left: 70px;
 }
 
 .button {
@@ -437,15 +437,48 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Butonlar arasında 10px boşluk */
+  margin-top: 220px; /* Üstten 30px boşluk */
+  margin-right: -760px;
+}
+
+.btn-item {
+  display: flex;
+  align-items: center; /* Buton ve metni dikeyde hizalar */
+  gap: 10px; /* Butonlar ve metin arasına boşluk */
+}
+
+.text-label {
+  color: white; /* Yazı rengi */
+  background-color: #3333333a; /* Arka plan rengi */
+  padding: 0.5rem; /* İçerikte boşluk */
+  border-radius: 0.375rem; /* Kenar yuvarlama */
+  width: 150px; /* Metin genişliği */
+  text-align: center; /* Metin ortalama */
+}
+
 .btn-toggle {
   display: flex;
-  border: 1px solid #383535;
+  border: 1px solid #ccc;
   border-radius: 0.375rem;
   overflow: hidden;
   width: 5rem; /* Buton grubunun genişliği */
   height: 2.5rem;
-  align-items: stretch; /* Butonların dikey hizalamasını sağlar */
 }
+
 .btn-toggle .btn {
   flex: 1;
   border-radius: 0;
@@ -457,32 +490,41 @@ body {
   height: 100%;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
+
 .btn-toggle .btn:first-child {
-  border-right: 1px solid #363636;
+  border-right: 1px solid #ccc;
 }
+
 .btn-toggle .btn.selected-left {
   background-color: red;
-  color: #2b2727;
+  color: #fff; /* Seçili butonun yazı rengi */
   transform: scale(1.05);
 }
+
 .btn-toggle .btn.selected-right {
   background-color: green;
-  color: #2b2727;
+  color: #fff; /* Seçili butonun yazı rengi */
   transform: scale(1.05);
 }
+
 .btn-toggle .btn:not(.selected-left):not(.selected-right) {
-  background-color: #363636;
-  color: #363636;
+  background-color: #505050; /* Seçili olmayan buton rengi */
+  color: #ccc; /* Seçili olmayan buton yazı rengi */
 }
+
 .btn-toggle .btn-left {
   border-radius: 0.375rem 0 0 0.375rem;
 }
+
 .btn-toggle .btn-right {
   border-radius: 0 0.375rem 0.375rem 0;
 }
+
 .btn-toggle .btn-left::before,
 .btn-toggle .btn-right::before {
   content: "";
   font-size: 1.5rem; /* Emoji boyutu */
 }
+
+
 

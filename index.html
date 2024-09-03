@@ -1,120 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Assetto Server Panel</title>
-		<link rel=" shortcut icon" type="image/png" href="assets/icons/favicon.png" />
-		<link rel="stylesheet" href="app.css" />
-		<script src="https://unpkg.com/lucide@latest"></script>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title>Assetto Server Panel</title>
+    <link rel="shortcut icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <button id="themeButton">
+        <i id="themeIcon" icon-name="moon"></i>
+    </button>
+    <div class="container">
+        <!-- Clock and Greetings -->
+        <div class="timeBlock">
+            <div class="clock">
+                <div id="hour"></div>
+                <div id="separator"></div>
+                <div id="minutes"></div>
+            </div>
+            <div id="greetings"></div>
+        </div>
 
-	<!-- 
-      ╔╗ ╔═╗╔╗╔╔╦╗╔═╗
-      ╠╩╗║╣ ║║║ ║ ║ ║
-      ╚═╝╚═╝╝╚╝ ╩ ╚═╝
-      -->
+        <!-- Date and Weather -->
+        <div class="weatherBlock">
+            <div class="date">
+                <div id="month"></div>
+                <div id="day"></div>
+            </div>
+            <div class="weather">
+                <div class="weatherIcon">
+                    <img src="assets/icons/OneDark/unknown.png" alt="Weather Icon">
+                </div>
+                <div class="weatherValue">
+                    <p>- °<span class="g">c</span></p>
+                </div>
+                <div class="weatherDescription">
+                    <p></p>
+                </div>
+            </div>
+        </div>
 
-	<body class="">
-		<button id="themeButton">
-			<i id="themeIcon" icon-name="moon"></i>
-		</button>
-		<div class="container">
-			<!-- Clock and Greetings  -->
+        <!-- Links Block -->
+        <div class="linksBlock" id="linksBlock">
+            <div class="linksBlockLeft" id="linksBlockLeft"></div>
+            <div class="linksBlockRight" id="linksBlockRight"></div>
+        </div>
+    </div>
 
-			<div class="timeBlock">
-				<div class="clock">
-					<div id="hour"></div>
-					<div id="separator"></div>
-					<div id="minutes"></div>
-				</div>
-				<div id="greetings"></div>
-			</div>
+    <div class="imageContainer">
+        <div id="trafikli-haritalar">Trafikli Haritalar</div>
+    </div>
 
-			<!-- Date and Weather  -->
+    <!-- Butonlar ve Yazılar -->
+    <div class="btn-container">
+        <div class="btn-item">
+            <div class="text-label">ABS Kullanımı</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">Çekiş Kontrolü</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">Stabilite Kontrolü</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">Otomatik Debriyaj</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">Lastik Battaniyesi</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">Sanal Aynayı Zorunlu Kıl</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">Farlar zorunlu açık kalmalı mı?</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">AFK'ları at</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+        <div class="btn-item">
+            <div class="text-label">Ters Yöne İzin Ver</div>
+            <div class="btn-toggle">
+                <button type="button" class="btn btn-left" onclick="toggleSelection(this, this.parentNode)">⛔</button>
+                <button type="button" class="btn btn-right" onclick="toggleSelection(this, this.parentNode)">✅</button>
+            </div>
+        </div>
+    </div>
 
-			<div class="weatherBlock">
-				<div class="date">
-					<div id="month"></div>
-					<div id="day"></div>
-				</div>
-				<div class="weather">
-					<div class="weatherIcon">
-						<img src="assets/icons/OneDark/unknown.png" />
-					</div>
-					<div class="weatherValue">
-						<p>- °<span class="g">c</span></p>
-					</div>
-					<div class="weatherDescription">
-						<p></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="linksBlock" id="linksBlock">
-				<div class="linksBlockLeft" id="linksBlockLeft"></div>
-				<div class="linksBlockRight" id="linksBlockRight"></div>
-			</div>
-		</div>
-
-		<div class="imageContainer">
-
-			<div id="trafikli-haritalar">
-				Trafikli Haritalar
-			</div>
-			
-
-		<!-- Config  -->
-		<script src="config.js"></script>
-
-		<!-- Scripts  -->
-		<script src="assets/js/layout.js"></script>
-		<script src="assets/js/theme.js"></script>
-		<script src="assets/js/time.js"></script>
-		<script src="assets/js/greeting.js"></script>
-		<script src="assets/js/weather.js"></script>
-
-		<!-- Generators  -->
-		<script src="assets/js/buttons.js"></script>
-		<!--<script src="assets/js/lists.js"></script>-->
-
-		<!--Benim butonlar-->
-		<head>
-			<meta charset="UTF-8">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>Buton</title>
-			<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-			<link rel="stylesheet" href="styles.css">
-		</head>
-		<body>
-		
-		<div class="btn-toggle">
-			<button type="button" class="btn btn-left" onclick="toggleSelection('left')">⛔</button>
-			<button type="button" class="btn btn-right" onclick="toggleSelection('right')">✅</button>
-		</div>
-		
-		<script>
-			function toggleSelection(selected) {
-				const leftButton = document.querySelector('.btn-left');
-				const rightButton = document.querySelector('.btn-right');
-		
-				if (selected === 'left') {
-					leftButton.classList.add('selected-left');
-					rightButton.classList.remove('selected-right');
-				} else {
-					rightButton.classList.add('selected-right');
-					leftButton.classList.remove('selected-left');
-				}
-			}
-		</script>
+	<div class="mb-3">
+		<label for="Sunucu Adı" class="form-label">Sunucu Adı</label>
+		<input type="text" class="form-control" id="Sunucu Adı" placeholder="Sunucu Adı">
+	  </div>
+	  <div class="mb-3">
+		<label for="Sunucu Açıklaması" class="form-label">Sunucu Açıklaması</label>
+		<input type="text" class="form-control" id="Sunucu Açıklaması" placeholder="Sunucu Açıklaması">
+	  </div>
 
 
-		<!-- Icons -->
-		<script>
-			lucide.createIcons();
-		</script>
-	</body>
 
-	<!-- Developed and designed by Miguel Ávila: -->
-	<!-- https://avila.sh-->
+    <!-- JavaScript -->
+    <script src="config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/time.js"></script>
+    <script src="assets/js/greeting.js"></script>
+    <script src="assets/js/weather.js"></script>
+    <script src="assets/js/buttons.js"></script>
+
+    <script>
+        function toggleSelection(button, container) {
+            const leftButton = container.querySelector('.btn-left');
+            const rightButton = container.querySelector('.btn-right');
+
+            if (button === leftButton) {
+                leftButton.classList.add('selected-left');
+                rightButton.classList.remove('selected-right');
+            } else {
+                rightButton.classList.add('selected-right');
+                leftButton.classList.remove('selected-left');
+            }
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
 </html>
